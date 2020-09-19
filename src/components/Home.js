@@ -2,19 +2,17 @@ import React, { useState, useEffect } from "react";
 
 import UserService from "../services/user.service";
 
-const EtudiantBoard = () => {
+const Home = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getEtudiantBoard().then(
+    UserService.getPublicContent().then(
       (response) => {
         setContent(response.data);
       },
       (error) => {
         const _content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
+          (error.response && error.response.data) ||
           error.message ||
           error.toString();
 
@@ -32,4 +30,4 @@ const EtudiantBoard = () => {
   );
 };
 
-export default EtudiantBoard;
+export default Home;

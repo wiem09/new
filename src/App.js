@@ -8,8 +8,6 @@ import AuthService from "./services/auth.service";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-import BoardUser from "./components/EnseignantBoard";
-import BoardModerator from "./components/EtudiantBoard";
 import EnseignantBoard from "./components/EnseignantBoard";
 import EtudiantBoard from "./components/EtudiantBoard";
 
@@ -42,7 +40,7 @@ const App = () => {
             </Link>
           </li>
 
-          {showModeratorBoard && (
+          {showEnseignantBoard && (
             <li className="nav-item">
               <Link to={"/mod"} className="nav-link">
                 Enseignant Board
